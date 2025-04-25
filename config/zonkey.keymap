@@ -170,10 +170,10 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W                      &kp E                  &kp R        &kp T                                          &kp Y              &kp U      &kp I      &kp O       &kp BACKSPACE
-&kp A      &kp S                      &kp D                  &kp F        &kp G             &kp LS(LG(S))    &kp MINUS   &kp H              &kp J      &kp K      &kp L       &kp P
-&kp TAB    &kp Z                      &kp X                  &kp C        &kp V             &kp B            &kp ESCAPE  &kp N              &kp M      &kp COMMA  &kp PERIOD  &kp SLASH
-&kp LCTRL  &mt LEFT_SHIFT LEFT_SHIFT  &mt LEFT_ALT LEFT_ALT  &lt 2 COLON  &kp LEFT_COMMAND  &lt 1 SPACE                  &kp RIGHT_COMMAND  &kp ENTER                                        &lt 4 END
+&kp Q      &kp W                      &kp E                  &kp R        &kp T                                          &kp Y      &kp U              &kp I      &kp O       &kp BACKSPACE
+&kp A      &kp S                      &kp D                  &kp F        &kp G             &kp LS(LG(S))    &kp MINUS   &kp H      &kp J              &kp K      &kp L       &kp ENTER
+&kp TAB    &kp Z                      &kp X                  &kp C        &kp V             &kp B            &kp ESCAPE  &kp N      &kp M              &kp COMMA  &kp PERIOD  &kp SLASH
+&kp LCTRL  &mt LEFT_SHIFT LEFT_SHIFT  &mt LEFT_ALT LEFT_ALT  &lt 2 COLON  &kp LEFT_COMMAND  &lt 1 SPACE                  &kp SPACE  &kp RIGHT_COMMAND                                        &lt 4 END
             >;
 
             sensor-bindings =
@@ -183,7 +183,7 @@
 
         layer_1 {
             bindings = <
-&kp ESCAPE    &trans    &trans  &trans            &trans                                              &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PLUS      &kp MINUS
+&kp ESCAPE    &trans    &trans  &trans            &trans                                              &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PLUS      &kp P
 &toJIS 1 TAB  &trans    &trans  &trans            &trans       &trans                &kp KP_NUMBER_7  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp SLASH
 &trans        &kp CAPS  &trans  &trans            &trans       &trans                &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMBER_0  &kp EQUAL     &moRBKT
 &trans        &trans    &trans  &lt 5 INT_HENKAN  &lt 4 SPACE  &lt 1 INT_MUHENKAN                     &trans           &trans                                                     &moBSLH
