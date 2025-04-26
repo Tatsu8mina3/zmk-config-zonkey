@@ -18,7 +18,7 @@
         compatible = "zmk,combos";
 
         cmd_a_to_tab {
-            bindings = <&cmd_tab_combo>;
+            bindings = <&kp TAB>;
             key-positions = <38 10>;
             timeout-ms = <200>;
             layers = <0>;
@@ -38,13 +38,6 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_GUI &kp LEFT_SHIFT &kp KP_NUMBER_4>;
             label = "SCREENSHOT_SELECT";
-        };
-
-        cmd_tab_combo: new_macrocmd_tab_combo {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &kp TAB>;
-            label = "NEW_MACROCMD_TAB_COMBO";
         };
     };
 
