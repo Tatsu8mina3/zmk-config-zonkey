@@ -14,15 +14,14 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        cmd_a_to_tab {
-            bindings = <&kp A>, <&kp LG(TAB)>;
-            key-positions = <38 10>;
-            timeout-ms = <200>;
-            layers = <0>;
-        };
+    behaviors {
+    cmd_a_to_tab {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings  = <&kp A>, <&kp LG(TAB)>;   /* Tab だけ送る */
+            mods      = <(MOD_LGUI)>;          /* Cmd が押されている時に発火 */
+            keep-mods = <(MOD_LGUI)>;          /* Cmd をそのままホストへ送る！ */
+        };    
     };
 
     macros {
