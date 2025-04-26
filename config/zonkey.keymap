@@ -32,14 +32,12 @@
             keep-mods = <(MOD_LGUI)>;
         };
 
-    cmd_sel_all: cmd_sel_all {        /* Cmd + A */
-        compatible = "zmk,behavior-transparent";
-        bindings   = <&kp LG(A)>;
-    };
-    screenshot_sel: screenshot_sel {  /* Cmd + Shift + 4 */
-        compatible = "zmk,behavior-transparent";
-        bindings   = <&kp LG(LS(N4))>;
-    };
+        cmd_sel_all: cmd_sel_all {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI &kp A>;   /* ⌘ と A を同時送信 */
+            label = "CMD_SELECT_ALL";
+        };
     };
 
     macros {
