@@ -19,7 +19,7 @@
 
         cmd_a_to_tab {
             bindings = <&kp TAB>;
-            key-positions = <10 38>;
+            key-positions = <38 12>;
             timeout-ms = <200>;
             layers = <0>;
         };
