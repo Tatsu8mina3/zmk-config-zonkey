@@ -35,7 +35,7 @@
         };
 
         /* Cmd + Shift + 4（範囲スクショ） */
-        screenshot_sel: screenshot_sel {
+    screenshot_select: screenshot_select {
             compatible     = "zmk,behavior-alias";
             #binding-cells = <0>;
             binding        = <&kp LG(LS(N4))>;
