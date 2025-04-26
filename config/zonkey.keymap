@@ -64,7 +64,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N2>, <&kp DQT>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -72,7 +71,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N6>, <&kp AMPS>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -80,7 +78,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N7>, <&kp APOS>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -88,7 +85,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N8>, <&kp LPAR>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -96,7 +92,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N9>, <&kp RPAR>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -104,7 +99,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp EQUAL>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -112,7 +106,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp CARET>, <&kp TILDE>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -120,7 +113,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp INT3>, <&kp PIPE>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -128,7 +120,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp AT>, <&kp GRAVE>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -136,7 +127,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LBKT>, <&kp LS(LBRC)>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -144,7 +134,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RBKT>, <&kp LS(RBRC)>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -152,7 +141,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp SEMI>, <&kp PLUS>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -160,7 +148,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp COLON>, <&kp ASTRK>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -168,15 +155,21 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BSLH>, <&kp UNDER>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        /* New behaviour: Cmd+A → Cmd+Tab, A 単押し → a */
+        a_cmd_tab: a_cmd_tab {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kp TAB>;
+            mods = <(MOD_LGUI)>;
         };
 
         scroll_down_up: behavior_sensor_rotate_mouse_wheel_down_up {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
             tap-ms = <20>;
         };
     };
@@ -187,9 +180,9 @@
         default_layer {
             bindings = <
 &kp Q             &kp W         &kp E                  &kp R        &kp T                                      &kp Y      &kp U              &kp I      &kp O       &kp BACKSPACE
-&kp A             &kp S         &kp D                  &kp F        &kp G         &kp LS(LG(S))    &kp MINUS   &kp H      &kp J              &kp K      &kp L       &kp ENTER
+&a_cmd_tab        &kp S         &kp D                  &kp F        &kp G         &kp LS(LG(S))    &kp MINUS   &kp H      &kp J              &kp K      &kp L       &kp ENTER
 &kp LEFT_CONTROL  &kp Z         &kp X                  &kp C        &kp V         &kp B            &kp ESCAPE  &kp N      &kp M              &kp COMMA  &kp PERIOD  &kp SLASH
-&kp LEFT_SHIFT    &kp LEFT_ALT  &mt LEFT_ALT LEFT_ALT  &lt 2 COLON  &kp LEFT_GUI  &lt 1 SPACE                  &kp SPACE  &kp RIGHT_COMMAND                                        &lt 4 END
+&kp LEFT_SHIFT    &kp LEFT_ALT  &mt LEFT_ALT LEFT_ALT  &lt 2 COLON   &kp LEFT_GUI  &lt 1 SPACE                  &kp SPACE  &kp RIGHT_COMMAND                                        &lt 4 END
             >;
 
             sensor-bindings =
