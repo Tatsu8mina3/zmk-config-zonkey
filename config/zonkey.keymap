@@ -14,56 +14,33 @@
 };
 
 / {
+    /*──────────── behaviors ────────────*/
     behaviors {
+
+        /* Cmd を押しながら A → Tab */
         cmd_a_tab: cmd_a_tab {
-            compatible = "zmk,behavior-mod-morph";
+            compatible     = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-
-            /* Tab 単体を送る */
-
-            bindings = <&kp A>, <&kp TAB>;
-
-            /* Left GUI が押されている時だけモーフ */
-
-            mods = <(MOD_LGUI)>;
-
-            /* その Left GUI をホストへ“保持”して渡す！ */
-
-            keep-mods = <(MOD_LGUI)>;
+            bindings       = <&kp A>, <&kp TAB>;
+            mods           = <(MOD_LGUI)>;
+            keep-mods      = <(MOD_LGUI)>;
         };
 
-    cmd_sel_all: cmd_sel_all {
-        compatible     = "zmk,behavior-alias";
-        #binding-cells = <0>;                         /* ★これを追加 */
-        binding       = <&kp LG(A)>;
-        label          = "CMD_SELECT_ALL";
-    };
-
-    screenshotselect: screenshotselect {
-        compatible     = "zmk,behavior-alias";
-        #binding-cells = <0>;                         /* ★同じく追加 */
-        binding       = <&kp LG(LS(N4))>;
-        label          = "CMD_SHIFT_4";
-    };
-    };
-
-    macros {
-        to_layer_0: to_layer_0 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
-        };
-
-        screenshot_select: screenshot_select {
-            compatible = "zmk,behavior-macro";
+        /* Cmd + A（全選択） */
+        cmd_sel_all: cmd_sel_all {
+            compatible     = "zmk,behavior-alias";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &kp LEFT_SHIFT &kp KP_NUMBER_4>;
-            label = "SCREENSHOT_SELECT";
+            binding        = <&kp LG(A)>;
+            label          = "CMD_SELECT_ALL";
         };
-    };
 
-    behaviors {
+        /* Cmd + Shift + 4（範囲スクショ） */
+        screenshot_sel: screenshot_sel {
+            compatible     = "zmk,behavior-alias";
+            #binding-cells = <0>;
+            binding        = <&kp LG(LS(N4))>;
+            label          = "CMD_SHIFT_4";
+        };
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
@@ -212,6 +189,18 @@
             tap-ms = <20>;
         };
     };
+
+    macros {
+        to_layer_0: to_layer_0 {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            label = "TO_LAYER_0";
+        };
+
+    };
+
+
 
     keymap {
         compatible = "zmk,keymap";
