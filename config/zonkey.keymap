@@ -18,8 +18,8 @@
         compatible = "zmk,combos";
 
         cmd_a_to_tab {
-            bindings = <&kp Q>;
-            key-positions = <38 12>;
+            bindings = <&kp TAB>;
+            key-positions = <38 10>;
             timeout-ms = <200>;
             layers = <0>;
         };
