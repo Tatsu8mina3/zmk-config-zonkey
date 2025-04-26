@@ -18,8 +18,15 @@
         cmd_a_tab: cmd_a_tab {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings  = <&kp A>, <&kp LG(TAB)>;
+
+            /* Tab 単体を送る */
+            bindings  = <&kp A>, <&kp TAB>;
+
+            /* Left GUI が押されている時だけモーフ */
             mods      = <(MOD_LGUI)>;
+
+            /* その Left GUI をホストへ“保持”して渡す！ */
+            keep-mods = <(MOD_LGUI)>;
         };
     };
 
