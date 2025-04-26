@@ -43,12 +43,12 @@
     };
 
     /* Momentary-1 / Tap-to-0 */
-    lt_to_layer_0: lt_to_layer_0 {
-        compatible     = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        bindings       = <&mo 1>, <&to 0>;     /* ★セル数そろえた */
-        tapping-term-ms = <10>;
-    };
+lt_to_layer_0: lt_to_layer_0 {
+    compatible     = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    bindings       = <&mo 1 &to 0>;   /* ← ここを 1 グループに */
+    tapping-term-ms = <10>;
+};
 
         toJIS: toJIS {
             compatible = "zmk,behavior-hold-tap";
