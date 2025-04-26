@@ -33,14 +33,14 @@
         };
 
     cmd_sel_all: cmd_sel_all {
-        compatible     = "zmk,behavior-transparent";  /* ← alias でも可 */
+        compatible     = "zmk,behavior-alias";
         #binding-cells = <0>;                         /* ★これを追加 */
         bindings       = <&kp LG(A)>;
         label          = "CMD_SELECT_ALL";
     };
 
     screenshotselect: screenshotselect {
-        compatible     = "zmk,behavior-transparent";
+        compatible     = "zmk,behavior-alias";
         #binding-cells = <0>;                         /* ★同じく追加 */
         bindings       = <&kp LG(LS(N4))>;
         label          = "CMD_SHIFT_4";
