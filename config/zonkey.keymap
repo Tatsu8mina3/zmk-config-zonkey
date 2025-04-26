@@ -14,7 +14,14 @@
 };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        cmd_a_to_tab {
+            bindings = <&kp TAB>;
+            key-positions = <10 38>;
+        };
+    };
 
     macros {
         to_layer_0: to_layer_0 {
