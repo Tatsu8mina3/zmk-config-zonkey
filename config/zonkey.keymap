@@ -259,7 +259,7 @@
             bindings = <
 &bt BT_SEL 0       &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3        &bt BT_SEL 4                                          &trans  &trans          &kp UP_ARROW    &kp UP_ARROW     &kp UP_ARROW
 &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans        &screenshot_select  &trans                         &trans    &trans       &trans  &kp LEFT_ARROW  &kp LEFT_ARROW  &kp RIGHT_ARROW  &kp RIGHT_ARROW
-&bt BT_CLR         &trans           &trans        &trans              &trans                         &trans    &bootloader  &trans  &trans          &kp DOWN_ARROW  &kp DOWN_ARROW   &trans
+&bt BT_CLR         &trans           &trans        &trans              &trans                         &trans    &bootloader  &trans  &kp DOWN_ARROW  &kp DOWN_ARROW  &kp DOWN_ARROW   &trans
 &trans             &trans           &trans        &trans              &mt LEFT_COMMAND LEFT_COMMAND  &trans                 &trans  &trans                                                            &trans
             >;
 
