@@ -224,10 +224,10 @@
 
         layer_1 {
             bindings = <
-&kp ESCAPE    &trans    &trans  &screenshot_select  &trans                                              &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PLUS      &kp P
-&cmd_sel_all  &trans    &trans  &trans              &trans       &trans                &kp KP_NUMBER_7  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp SLASH
-&trans        &kp CAPS  &trans  &trans              &trans       &trans                &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMBER_0  &kp EQUAL     &moRBKT
-&trans        &trans    &trans  &lt 5 INT_HENKAN    &lt 4 SPACE  &lt 1 INT_MUHENKAN                     &trans           &trans                                                     &moBSLH
+&kp ESCAPE  &trans    &trans  &trans            &trans                                              &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PLUS      &kp P
+&trans      &trans    &trans  &trans            &trans       &trans                &kp KP_NUMBER_7  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp SLASH
+&trans      &kp CAPS  &trans  &trans            &trans       &trans                &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMBER_0  &kp EQUAL     &moRBKT
+&trans      &trans    &trans  &lt 5 INT_HENKAN  &lt 4 SPACE  &lt 1 INT_MUHENKAN                     &trans           &trans                                                     &moBSLH
             >;
 
             sensor-bindings = <&scroll_down_up>;
@@ -257,10 +257,10 @@
 
         layer_4 {
             bindings = <
-&bt BT_SEL 0       &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3        &bt BT_SEL 4                                          &trans  &trans          &kp UP_ARROW    &kp UP_ARROW     &kp UP_ARROW
-&kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans        &screenshot_select  &trans                         &trans    &trans       &trans  &kp LEFT_ARROW  &kp LEFT_ARROW  &kp RIGHT_ARROW  &kp RIGHT_ARROW
-&bt BT_CLR         &trans           &trans        &trans              &trans                         &trans    &bootloader  &trans  &kp DOWN_ARROW  &kp DOWN_ARROW  &kp DOWN_ARROW   &trans
-&trans             &trans           &trans        &trans              &mt LEFT_COMMAND LEFT_COMMAND  &trans                 &trans  &trans                                                            &trans
+&bt BT_SEL 0       &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                        &trans          &kp UP_ARROW    &kp UP_ARROW    &kp UP_ARROW     &kp UP_ARROW
+&kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans        &trans        &trans        &bt BT_CLR    &trans  &trans          &kp LEFT_ARROW  &kp LEFT_ARROW  &kp RIGHT_ARROW  &kp RIGHT_ARROW
+&trans             &trans           &trans        &trans        &trans        &trans        &trans  &kp DOWN_ARROW  &kp DOWN_ARROW  &kp DOWN_ARROW  &kp DOWN_ARROW   &trans
+&trans             &trans           &trans        &trans        &trans        &trans                &trans          &trans                                                            &trans
             >;
 
             sensor-bindings = <&scroll_down_up>;
@@ -268,10 +268,10 @@
 
         layer_5 {
             bindings = <
-&trans   &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&kp TAB  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans   &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans   &trans  &trans  &trans  &trans  &trans            &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&scroll_down_up>;
