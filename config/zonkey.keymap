@@ -38,6 +38,17 @@
             bindings = <&kp LEFT_GUI &kp A>;   /* ⌘ と A を同時送信 */
             label = "CMD_SELECT_ALL";
         };
+    /* ─── Shift で縦⇆横を切り替えるエンコーダー用ビヘイビア ─── */
+    scroll_vh: scroll_vh {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+
+        /* 0 = 縦スクロール, 1 = 横スクロール */
+        bindings = <&scroll_down_up>, <&scroll_left_right>;
+
+        /* 左右どっちの Shift でも反応させる */
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
     };
 
     macros {
