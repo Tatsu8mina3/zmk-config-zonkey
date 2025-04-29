@@ -38,6 +38,15 @@
             bindings = <&kp LEFT_GUI &kp A>;   /* ⌘ と A を同時送信 */
             label = "CMD_SELECT_ALL";
         };
+
+        scroll_lr: scroll_lr {
+            /* 縦スクロールで使われてる rotate ビヘイビアと同じ */
+            compatible = "zmk,behavior-sensor-rotate";
+            #binding-cells = <0>;
+
+            /* 時計回り→左スクロール, 反時計回り→右スクロール */
+            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+        };
     /* ─── Shift で縦⇆横を切り替えるエンコーダー用ビヘイビア ─── */
     scroll_vh: scroll_vh {
         compatible = "zmk,behavior-mod-morph";
@@ -50,6 +59,9 @@
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     };
+
+    /* エンコーダーに紐づけ */
+    &encoder_left { bindings = <&scroll_vh>; };
 
     macros {
         to_layer_0: to_layer_0 {
