@@ -280,8 +280,8 @@
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans            &trans                    &trans    &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &kp LC(UP_ARROW)  &trans  &trans    &trans  &mkp MB4  &mkp MB1  &mkp MB2  &mkp MB2  &mkp MB2
-&trans  &trans  &trans  &trans            &trans  &trans    &trans  &mkp MB5  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &kp LC(UP_ARROW)  &trans  &trans    &trans  &mkp MB1  &mkp MB1  &mkp MB2  &mkp MB2  &mkp MB2
+&trans  &trans  &trans  &trans            &trans  &trans    &trans  &trans    &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans            &trans  &trans            &trans    &trans                                  &trans
             >;
 
