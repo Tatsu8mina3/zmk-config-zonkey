@@ -56,7 +56,6 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         automouse-layer = <6>;
-        automouse-layer-timeout-ms = <800>;    /* ← これを追加！(400≒デフォ → 500-800で調整) */
         scroll-layers = <5>;
 
     };
