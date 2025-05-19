@@ -1,43 +1,77 @@
-&spi0 {
-    status = "okay";
-    compatible = "nordic,nrf-spim";
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
-    pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+/* ──────────────────────────────────────────
+ *  zonkey_R.overlay  (for PMW3610 trackball)
+ *  - layer 6 を「動いている間＋停止後 700 ms」だけ有効
+ *  - label の綴りをすべて “spi0” (=ゼロ) で統一
+ * ──────────────────────────────────────────
+ */
+#include "zonkey.dtsi"
 
-    trackball: trackball@0 {
-        status = "okay";
-        compatible = "pixart,pmw3610";
-        reg = <0>;
-        spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+/* ※ もとのキーボード行列設定 (col-offset 等) はそのまま残す */
+&default_transform {
+    col-offset = <6>;
+};
 
-        /* ここはもう使われない
-         * automouse-layer = <6>;
-         * scroll-layers  = <5>;
-         */
+&kscan0 {
+    col-gpios = <&xiao_d 10 GPIO_ACTIVE_HIGH>,
+                <&xiao_d  9 GPIO_ACTIVE_HIGH>,
+                <&xiao_d  8 GPIO_ACTIVE_HIGH>,
+                <&xiao_d  7 GPIO_ACTIVE_HIGH>,
+                <&gpio0   10 GPIO_ACTIVE_HIGH>;
+};
 
-        /* ──★新方式★───────────────────────
-         *   layer 6 を 700 ms 間アクティブにする
-         *   （第二引数はタイムアウト ms）
-         *   5 ms ごとに「動いた」イベントが来るので、
-         *   実際は指を離して 0.7 秒後に layer が戻る感じ
-         */
-        input-processors = <&zip_temp_layer 6 700>;
+/* ───── pinctrl ラベル定義（“spi0” が２か所！） ───── */
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK , 0, 5)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
+        };
+    };
 
-        /* スクロール・スナイプ用はこの下で別 listener を
-         * 追加する or code-mapper を使うやり方に変わる。
-         * （いまはまずマウスレイヤー復活を優先）
-         */
+    spi0_sleep: spi0_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK , 0, 5)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
+            low-power-enable;
+        };
     };
 };
 
-/ {
-    /* 既存 */
+/* ───── 新方式：Input-Processor ノードを自前定義 ───── */
+&{/} {
+    input_processors {
+        temp_layer6: temp_layer6 {
+            compatible = "zmk,input-processor,temp-layer";
+            layer      = <6>;     /* 有効化するレイヤー   */
+            timeout-ms = <700>;   /* 動きが止まってから解除まで */
+        };
+    };
+
     trackball_listener {
         compatible = "zmk,input-listener";
-        device = <&trackball>;
-        /* ↑ここはそのままで OK ／追加不要 */
+        device     = <&trackball>;
+    };
+};
+
+/* ───── トラックボールノード ───── */
+&spi0 {
+    status         = "okay";
+    compatible     = "nordic,nrf-spim";
+    pinctrl-0      = <&spi0_default>;
+    pinctrl-1      = <&spi0_sleep>;
+    pinctrl-names  = "default", "sleep";
+    cs-gpios       = <&gpio0 9 GPIO_ACTIVE_LOW>;
+
+    trackball: trackball@0 {
+        status            = "okay";
+        compatible        = "pixart,pmw3610";
+        reg               = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios         = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+
+        /* ↓ここで先ほど作った Input-Processor を呼び出す */
+        input-processors  = <&temp_layer6>;
     };
 };
