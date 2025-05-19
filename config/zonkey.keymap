@@ -237,7 +237,7 @@
             bindings = <
 &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR        &kp PERCENT                                &kp CARET      &kp AMPERSAND             &kp ASTERISK               &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
 &trans           &trans       &trans    &trans            &trans       &trans                &trans  &kp SEMICOLON  &kp LS(LG(LEFT_BRACKET))  &kp LS(LG(RIGHT_BRACKET))  &kp LEFT_BRACKET      &kp RIGHT_BRACKET
-&trans           &trans       &trans    &trans            &trans       &trans                &trans  &trans         &trans                    &trans                     &trans                &trans
+&trans           &trans       &trans    &trans            &trans       &trans                &trans  &trans         &trans                    &trans                     &trans                &kp SINGLE_QUOTE
 &trans           &trans       &trans    &lt 6 INT_HENKAN  &lt 2 SPACE  &lt 4 INT_MUHENKAN            &trans         &trans                                                                                            &trans
             >;
 
