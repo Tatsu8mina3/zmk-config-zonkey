@@ -56,6 +56,6 @@
     trackball_listener {
         compatible       = "zmk,input-listener";
         device           = <&trackball>;
-        input-processors = <&temp_layer6 6 700>; /* layer-6, 700 ms */
+        input-processors = <&temp_layer6 6 200>; /* layer-6, 700 ms */
     };
 };
