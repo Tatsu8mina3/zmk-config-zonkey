@@ -47,7 +47,7 @@
 
 /* ────── Input-Processor + Listener 追加部分 ────── */
 &{/} {
-    /* layer-6 を 300 ms だけ有効にする Processor */
+    /* layer-6 を 350 ms だけ有効にする Processor */
     temp_layer6: temp_layer6 {
         compatible             = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;          /* layer, timeout で２セル */
@@ -56,6 +56,6 @@
     trackball_listener {
         compatible       = "zmk,input-listener";
         device           = <&trackball>;
-        input-processors = <&temp_layer6 6 300>; /* layer-6, 300 ms */
+        input-processors = <&temp_layer6 6 350>; /* layer-6, 350 ms */
     };
 };
